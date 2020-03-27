@@ -1,0 +1,8 @@
+<button *ngIf="!isAuthenticated" mat-raised-button (click)="oktaAuth.loginRedirect()" color="primary">Login</button>
+
+<ng-container *ngIf="isAuthenticated">
+    <ng-container *ngIf="user">
+        <h1>Welcome {{user.name}}</h1>
+    </ng-container>
+    <button mat-raised-button (click)="oktaAuth.logout()" color="warn">Logout</button>
+</ng-container>
